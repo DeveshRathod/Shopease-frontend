@@ -143,7 +143,7 @@ const Navbar = () => {
         onMouseEnter={checkHealth}
         onMouseLeave={clearHealth}
       >
-        <h1 className="font-bold tracking-wide">ShopEase3</h1>
+        <h1 className="font-bold tracking-wide">ShopEase4</h1>
 
         {healthStatus && (
           <span
