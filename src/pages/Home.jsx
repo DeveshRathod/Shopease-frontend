@@ -107,7 +107,7 @@ const Home = () => {
                     Welcome to ShopEase
                   </h1>
                   <p className="text-base mb-6 text-gray-600">
-                    Find everything you need with ease on ShopEase.
+                    Find everything you need with ease on ShopEase!
                   </p>
                   <div className="flex flex-wrap justify-center sm:justify-start">
                     <Link
