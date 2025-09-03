@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     def scannerHome = tool 'sonar'
-                    withCredentials([string(credentialsId: 'sonar-token2', variable: 'SONAR_TOKEN')]) {
+                    withCredentials([string(credentialsId: 'sonar-token2', variable: 'SONAR_TOKEN2')]) {
                         sh """
                             ${scannerHome}/bin/sonar-scanner \
                               -Dsonar.projectKey=${SONAR_PROJECT} \
