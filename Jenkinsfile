@@ -64,10 +64,12 @@ pipeline {
                     echo "Running Trivy vulnerability scan..."
                     sh """
                         docker run --rm \
-                          -v /var/run/docker.sock:/var/run/docker.sock \
-                          -v $HOME/.cache:/root/.cache \
-                          aquasec/trivy:latest image ${REGISTRY}/${APP_NAME}:${IMAGE_TAG} \
-                          --severity HIGH,CRITICAL --exit-code 1 || echo 'Vulnerabilities Found!'
+                        -v /var/run/docker.sock:/var/run/docker.sock \
+                        -v $HOME/.cache:/root/.cache \
+                        -v $(pwd):/workspace \
+                        aquasec/trivy:latest image ${REGISTRY}/${APP_NAME}:${IMAGE_TAG} \
+                        --severity HIGH,CRITICAL \
+                        --format json --output /workspace/trivy-report.json
                     """
                 }
             }
