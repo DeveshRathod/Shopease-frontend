@@ -21,6 +21,9 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
+# Install curl for health checks
+RUN apk add --no-cache curl
+
 # Copy frontend build
 COPY --from=build /app/dist /usr/share/nginx/html
 
